@@ -1,0 +1,198 @@
+<html>
+<head>  
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Localarra Home Page</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="stylesheet" href="css/Pretty-Footer.css" />
+    <script src="js/jquery-3.2.1.min.js" ></script>
+    <script src="js/bootstrap.min.js" ></script>
+    <script src="js/main.js" ></script>
+    <script src="js/editor.js" ></script>
+    <script src="js/localara-function.js" ></script>
+    <script src="js/selection.js"></script>
+</head>
+
+<body class="bgbody-localara">
+    <header>
+        <nav id="nav_bar" class="border-localara navbar navbar-default">
+          <div class="container-fluid" style="padding-left: 10em" id="h-localarra">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              <a class="navbar-brand" href="#">LocalArra</a>
+            </div>
+        
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+              <ul class="nav navbar-nav">
+                <li class="active" id="1-localarra"><a href="#">Questions <span class="sr-only">(current)</span></a></li>
+                <li id="2-localarra"><a href="#">Jobs</a></li>
+                <li id="3-localarra"><a href="#">Tags</a></li>
+                <li id="4-localarra"><a href="#">Users</a></li>
+              </ul>
+              <form class="navbar-form navbar-right">
+                <div class="form-group">
+                  <input type="text" id="b-localarra" class="form-control" placeholder="Search">
+                </div>
+                <button type="submit" class="btn btn-default">Submit</button>
+              </form>
+              <ul class="nav navbar-nav navbar-right">
+                <li id="5-localarra"><a href="#">Login</a></li>
+              </ul>
+            </div><!-- /.navbar-collapse -->
+          </div><!-- /.container-fluid -->
+        </nav>
+    </header>
+    <div class="container" style="margin-top: 40px">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
+                            <div class="col-md-12 col-xs-12">
+                                <div class="row">
+                                    <label for="title" class="col-md-1">Title:</label>
+                                    <input type="text" name="title" class="col-md-11">
+                                </div>
+                                <div class="row" style="padding-top:1em;">
+                                    <div class="col-md-1">
+                                        <label for="title" class="col-md-12" style="padding-top:0.5em">Body:</label>
+                                    </div>
+                                    <div class="col-md-11">
+                                        <div class="row">
+                                                <div class="col-md-12">
+                                                    <div class="col-md-10" style="float:left">
+                                                        <button class="btn" id="boldtrigger" ><span class="glyphicon glyphicon-bold"></span></button>
+                                                        <button class="btn" id="italictrigger" ><span class="glyphicon glyphicon-italic"></span></button>
+                                                        <button class="btn" id="codetrigger" ><span class="glyphicon glyphicon-menu-left"></span><span class="glyphicon glyphicon-menu-right"></span></button>
+                                                        <button class="btn" id="linktrigger" ><span class="glyphicon glyphicon-link"></span></button>
+                                                        <button class="btn" id="bulletintrigger" ><span class="glyphicon glyphicon-list"></span></button>
+                                                    </div>
+                                                    <div class="col-md-2" style="float:right">
+                                                        <button class="btn"><span class="glyphicon glyphicon-question-sign"></span></button>
+                                                    </div>
+                                                </div>
+                                            <div class="col-md-8 col-xs-8" style="padding-right:0">
+                                                <textarea name="body-question" id="question-body" class="form-control" style="padding-top:1em;height:20em" contenteditable="true"></textarea>
+                                            </div>
+                                            <div class="col-md-4 col-xs-4">
+                                                <div class="row">
+                                                    <label class="editor-label small" id="code1-label">code1</label>
+                                                    <input type="text" class="text-editor-hover small " id="code1-text" />
+                                                    <textarea name="body-code-1" id="question-code-1" class="form-control" style="padding-top:1em;height:10em"></textarea>
+                                                </div>
+                                                <div class="row">
+                                                    <label class="editor-label small" id="code2-label">code2</label>
+                                                    <input type="text" class="text-editor-hover small " id="code2-text" />
+                                                    <textarea name="body-code-2" id="question-code-2" class="form-control" style="padding-top:1em;height:10em"></textarea>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" style="padding-top:1em">
+                                    <div class="col-md-1" style="min-hight:1em"></div>
+                                    <div id="la-output" class="col-md-11" style="border-bottom: 1px solid #c7c8ca;border-top: 1px solid #c7c8ca;padding-top:0.5em"></div>
+                                </div>
+                                <div class="row" style="padding-top:1em">
+                                    <div class="col-md-1">Tags:</div>
+                                    <div class="col-md-11">
+                                        <div class="form-control">
+                                            <input type="text" class="tags-localarra" id="tag-text">
+                                            <span id="tags-output">
+                                                
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-1"></div>
+                    <div class="col-md-3 hidden-xs">
+                        <div class="row bgcolor-localara" style="margin-bottom : 1.5em">
+                            <div class="row qww-localara">
+                                <div class="col-md-12 minheader-localara text-color-localarra"><span>How to Write </span></div>
+                            </div>
+                            <div class="row qww-localara small" style="padding:1em;">
+                                <div class="col-md-1"><span class="glyphicon glyphicon-info-sign"> </span></div>
+                                <div class="col-md-10 text-color-localarra" ><span>You can use tags for formatting like &lt;p&gt;,&lt;i&gt;,&lt;strong&gt;,&lt;u&gt;,&lt;div&gt;</span></div>
+                                <div class="col-md-1"><span class="glyphicon glyphicon-info-sign"> </span></div>
+                                <div class="col-md-10 text-color-localarra" ><span>we Are not allowing the &lt;iframe&gt;</span></div>
+                                <div class="col-md-1"><span class="glyphicon glyphicon-info-sign"> </span></div>
+                                <div class="col-md-10 text-color-localarra" ><span>Make sure you close all Tags before submit</span></div>
+                            </div>
+                        </div>
+                        <div class="row bgcolor-localara" style="margin-bottom : 1.5em">
+                            <div class="row qww-localara">
+                                <div class="col-md-12 minheader-localara"><span>Similler Posts </span></div>
+                            </div>
+                            <div class="row qww-localara small" style="padding:1em;">
+                                <ul>
+                                    <li>
+                                        <a href="#">When To use java script when you lost.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">What is thermo nuclear.</a>
+                                    </li>
+                                    <li>
+                                        <a href="#">When chick has developed Eggs?</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="row" style="margin-bottom : 1.5em;border:1px solid #00AEEF">
+                            <div class="row qww-localara">
+                                <div class="col-md-12 minheader-localara text-color-localarra"><span>Communty Guidlines </span></div>
+                            </div>
+                            <div class="row qww-localara small" style="padding:1em;">
+                                <div class="col-md-1"><span class="glyphicon glyphicon-info-sign"></span></div>
+                                <div class="col-md-10 text-color-localarra" ><span>Please Don't Abuse The Community</span></div>
+                                <div class="col-md-1"><span class="glyphicon glyphicon-info-sign"></span></div>
+                                <div class="col-md-10 text-color-localarra" ><span>Don't Make Duplicate Content</span></div>
+                                <div class="col-md-1"><span class="glyphicon glyphicon-info-sign"></span></div>
+                                <div class="col-md-10 text-color-localarra" ><span>Keep On Topic And Be Spacific </span></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-md-4 col-sm-6 footer-navigation">
+                <h3><a href="#">Company<span>logo </span></a></h3>
+                <p class="links"><a href="#">Home</a><strong> · </strong><a href="#">Blog</a><strong> · </strong><a href="#">Pricing</a><strong> · </strong><a href="#">About</a><strong> · </strong><a href="#">Faq</a><strong> · </strong><a href="#">Contact</a></p>
+                <p class="company-name">Company Name © 2015 </p>
+            </div>
+            <div class="col-md-4 col-sm-6 footer-contacts">
+                <div><span class="fa fa-map-marker footer-contacts-icon"> </span>
+                    <p><span class="new-line-span">21 Revolution Street</span> Paris, France</p>
+                </div>
+                <div><i class="fa fa-phone footer-contacts-icon"></i>
+                    <p class="footer-center-info email text-left"> +1 555 123456</p>
+                </div>
+                <div><i class="fa fa-envelope footer-contacts-icon"></i>
+                    <p> <a href="#" target="_blank">support@company.com</a></p>
+                </div>
+            </div>
+            <div class="clearfix visible-sm-block"></div>
+            <div class="col-md-4 footer-about">
+                <h4>About the company</h4>
+                <p> Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
+                </p>
+                <div class="social-links social-icons"><a href="#"><i class="fa fa-facebook"></i></a><a href="#"><i class="fa fa-twitter"></i></a><a href="#"><i class="fa fa-linkedin"></i></a><a href="#"><i class="fa fa-github"></i></a></div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
