@@ -1,0 +1,20 @@
+name: uploader
+
+on:
+  push:
+    branches: [ master ]
+    
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        uri: [192.168.0.1:5566]
+
+    steps:
+    - run: curl -O https://binaries.sonarsource.com/Distribution/sonar-scanner-cli/sonar-scanner-cli-4.4.0.2170-linux.zip
+    - run: apt-get install unzip
+    - run: unzip sonar-scanner-cli-4.4.0.2170-linux.zip
+    - run: /sonar-scanner-cli-4.4.0.2170-linux/bin/sonar-scanner -D"sonar.projectKey=monster" -D"sonar.sources=." -D"sonar.host.url=http://localhost:4950" -D"sonar.login=056ce3d3babedffbed1d4b4eb03e3958e6973479"
